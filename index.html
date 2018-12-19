@@ -15,6 +15,7 @@
     var clipboard = new Clipboard('#btn');
 
     clipboard.on('success', function (event) {
+      window.alert(JSON.stringify(event));
       window.alert('Action:', event.action);
       window.alert('Text:', event.text);
       window.alert('Trigger:', event.trigger);
