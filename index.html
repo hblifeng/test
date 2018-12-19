@@ -22,7 +22,7 @@
     });
 
     clipboard.on('error', function (event) {
-      window.alert(event)
+      window.alert(JSON.stringify(event))
     });
 
     window.onload = function () {
