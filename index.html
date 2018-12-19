@@ -16,9 +16,9 @@
 
     clipboard.on('success', function (event) {
       window.alert(JSON.stringify(event));
-      window.alert('Action:', event.action);
-      window.alert('Text:', event.text);
-      window.alert('Trigger:', event.trigger);
+      window.alert('Action:' + event.action);
+      window.alert('Text:' + event.text);
+      window.alert('Trigger:'+  event.trigger);
       event.clearSelection();
     });
 
