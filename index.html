@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head id="head">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <title>copy</title>
+
+</head>
+
+<body>
+  <button id="btn" data-clipboard-text="恭喜你,文本内容复制成功 !!!">复制</button>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.4.2/clipboard.min.js"></script>
+  <script>
+    var clipboard = new Clipboard('#btn');
+
+    clipboard.on('success', function (event) {
+      window.alert('Action:', event.action);
+      window.alert('Text:', event.text);
+      window.alert('Trigger:', event.trigger);
+      event.clearSelection();
+    });
+
+    clipboard.on('error', function (event) {
+      window.alert(event)
+    });
+
+    window.onload = function () {
+
+      document.getElementById("btn").click();
+
+    }
+  </script>
+</body>
+
+</html>
