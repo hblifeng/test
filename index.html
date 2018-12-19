@@ -27,8 +27,21 @@
     });
 
     window.onload = function () {
+      // 两秒后模拟点击
+      setTimeout(function() {
+          // IE
+          if(document.all) {
+              document.getElementById("btn").click();
+          }
+          // 其它浏览器
+          else {
+              var e = document.createEvent("MouseEvents");
+              e.initEvent("click", true, true);
+              document.getElementById("btn").dispatchEvent(e);
+          }
+      }, 2000);
 
-      document.getElementById("btn").click();
+      // document.getElementById("btn").click();
 
     }
   </script>
